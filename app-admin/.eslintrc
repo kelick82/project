@@ -1,0 +1,73 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module" // Allows for the use of imports
+  },
+  "extends": [
+    "plugin:vue/vue3-strongly-recommended",
+    // eslint plugin import settings
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    // eslint plugin import settings [e]
+    // 순서주의
+    "plugin:prettier/recommended" // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+  ],
+  "plugins": ["import"],
+  "rules": {
+    // 이걸 여기다가 넣어야지 .prettierrc에 넣으면 우선순위 씹힐 때 있다.
+    "prettier/prettier": [        // prettier 룰 추가
+			"error",
+			{
+				"singleQuote": true,
+				"semi": true,
+				"useTabs": false,
+				"tabWidth": 2,
+				"trailingComma": "all",
+				"printWidth": 80,
+				"bracketSpacing": true,
+				"arrowParens": "avoid",
+				"endOfLine": "auto"
+			}
+		],
+    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
+    // sort for inside curly.
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
+      }
+    ],
+    // sort for imports.
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["external", "builtin"], // Built-in types are first
+          "internal",
+          ["sibling", "parent"], // Then sibling and parent types. They can be mingled together
+          "index", // Then the index file
+          "object"
+          // Then the rest: internal and external type
+        ],
+        "pathGroups": [
+          {
+            "pattern": "~/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@/**",
+            "group": "external"
+          }
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc", // sort in ascending order. Options: ['ignore', 'asc', 'desc']
+          "caseInsensitive": true // ignore case. Options: [true, false]
+        }
+      }
+    ]
+  }
+}
