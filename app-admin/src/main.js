@@ -1,3 +1,4 @@
+import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -15,12 +16,18 @@ const routes = [
   { path: '/page2', component: SamplePage2, meta: { layout: AuthLayout } },
 ];
 
+// router
 const router = createRouter({
   history: createWebHistory(),
   routes,
 });
 
+// store 설정
+const pinia = createPinia();
+
+// app 설정
 const app = createApp(App);
 app.use(router);
+app.use(pinia);
 
 app.mount('#app');

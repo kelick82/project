@@ -1,7 +1,10 @@
 <script setup>
 defineEmits(['onClick']);
+defineProps({
+  label: String,
+});
 </script>
 
 <template>
-  <button @click="$emit('onClick')">클릭</button>
+  <button @click="$emit('onClick')">{{ label }}</button>
 </template>
