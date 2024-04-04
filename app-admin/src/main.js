@@ -1,5 +1,8 @@
 import { createPinia } from 'pinia';
 import PrimeVue from 'primevue/config';
+
+import Wind from './presets/wind'; //import preset
+
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -30,6 +33,9 @@ const pinia = createPinia();
 const app = createApp(App);
 app.use(router);
 app.use(pinia);
-app.use(PrimeVue);
+app.use(PrimeVue, {
+  unstyled: true,
+  pt: Wind,
+});
 
 app.mount('#app');
