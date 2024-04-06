@@ -16,7 +16,7 @@
         <InputText>SEARCH BAR</InputText>
       </div>
       <div class="pt-5 px-5">
-        <slot/>
+        <slot />
       </div>
     </div>
   </div>

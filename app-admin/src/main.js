@@ -1,29 +1,13 @@
 import { createPinia } from 'pinia';
 import PrimeVue from 'primevue/config';
 
-import Wind from './presets/wind'; //import preset
+import Wind from './presets/wind';
 
 import { createApp } from 'vue';
-import { createRouter, createWebHistory } from 'vue-router';
 
 import './style.css';
 import App from './App.vue';
-import MainLayout from './layouts/MainLayout.vue';
-import ApiPermissionManagement from './views/ApiPermissionManagement.vue';
-
-const routes = [
-  {
-    path: '/',
-    component: ApiPermissionManagement,
-    meta: { layout: MainLayout },
-  },
-];
-
-// router
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-});
+import router from './router';
 
 // store 설정
 const pinia = createPinia();
