@@ -4,13 +4,25 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   content: ['./src/**/*.{vue,js,ts,jsx,tsx}'],
-  colors: {
-    ...colors,
-    'tHeader-100': '#000000',
-  },
   theme: {
+    // colors: {
+    //   ...colors,
+    //
+    // },
     extend: {
       colors: {
+        LogiSkyblue: { 100: '#EAEDF3' },
+        LogiBlue: {
+          300: '#3070ED',
+        },
+        LogiGray: {
+          100: '#EAEAEA',
+          900: '#111111',
+        },
+        LogiNavy: {
+          100: '#2D4C6F',
+          300: '#172739',
+        },
         'primary-100': 'rgb(var(--primary-100))',
         'primary-200': 'rgb(var(--primary-200))',
         'primary-300': 'rgb(var(--primary-300))',
