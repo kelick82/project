@@ -2,13 +2,10 @@
 
 </script>
 
+<!-- Log.vue -->
 <template>
   <div>
-    <h2>home {{ $route.params }}</h2>
+    <h2>Log {{ $route.params.sub }}</h2>
     <router-view />
   </div>
 </template>
-
-<style scoped>
-
-</style>

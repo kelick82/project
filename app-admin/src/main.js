@@ -1,8 +1,5 @@
 import { createPinia } from 'pinia';
-import Button from 'primevue/button';
 import PrimeVue from 'primevue/config';
-import Dialog from 'primevue/dialog';
-import InputText from 'primevue/inputtext';
 import { createApp } from 'vue';
 
 import Wind from './presets/wind';

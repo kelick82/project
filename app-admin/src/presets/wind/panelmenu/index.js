@@ -4,16 +4,19 @@ export default {
     },
     header: {
         class: ['rounded-md', 'outline-none', 'focus-visible:outline-none focus-visible:outline-offset-0 focus-visible:ring focus-visible:ring-primary-400/50 dark:focus-visible:ring-primary-300/50']
+        //class: []
     },
     headercontent: ({ context, instance }) => ({
         class: [
             // Shape
-            'rounded-t-md',
-            { 'rounded-br-md rounded-bl-md': !context.active || instance.activeItem?.items === undefined, 'rounded-br-0 rounded-bl-0': context.active && instance.activeItem?.items !== undefined },
+            //'rounded-t-md',
+            //{ 'rounded-br-md rounded-bl-md': !context.active || instance.activeItem?.items === undefined, 'rounded-br-0 rounded-bl-0': context.active && instance.activeItem?.items !== undefined },
 
             // Color
-            'border border-surface-200 dark:border-surface-700',
-            'bg-surface-0 dark:bg-surface-800',
+            //'border border-surface-200 dark:border-surface-700',
+            //'bg-surface-0 dark:bg-surface-800',
+            'bg-LogiNavy-300',
+
             'text-surface-600 dark:text-surface-0/80',
             { 'text-surface-900 ark:text-surface-0': context.active },
 
@@ -56,12 +59,14 @@ export default {
             'py-1',
 
             // Shape
-            'border border-t-0',
-            'rounded-t-none rounded-br-md rounded-bl-md',
+            //'border border-t-0',
+            //'rounded-t-none rounded-br-md rounded-bl-md',
 
             // Color
-            'text-surface-700 dark:text-white/80',
-            'bg-surface-0 dark:bg-surface-800',
+            //'text-surface-700 dark:text-white/80',
+            'text-LogiWhite',
+            //'bg-surface-0 dark:bg-surface-800',
+            'bg-LogiNavy-300',
             'border-surface-200 dark:border-surface-700'
         ]
     },
@@ -108,7 +113,7 @@ export default {
         ]
     }),
     icon: {
-        class: 'mr-2'
+        class: 'mr-2 text-LogiWhite '
     },
     submenu: {
         class: 'p-0 pl-4 m-0 list-none'
