@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import AgentCarrier from './components/AgentCarrier.vue';
+import AgentClient from './components/AgentClient.vue';
+import AgentForwarder from './components/AgentForwarder.vue';
+import UserCarrier from './components/UserCarrier.vue';
+import UserClient from './components/UserClient.vue';
+import UserDriver from './components/UserDriver.vue';
+import UserForwarders from './components/UserForwarders.vue';
 
-import LogEmail from './components/LogEmail.vue';
-import LogPhone from './components/LogPhone.vue';
 import DefaultLayout from './layouts/DefaultLayout.vue';
+import Agent from './views/Agent.vue';
 import Home from './views/Home.vue';
-import Log from './views/Log.vue';
 import test from './views/test.vue';
+import User from './views/User.vue';
 
 const routes = [
   {
@@ -19,39 +25,44 @@ const routes = [
     //meta: { layout: MainLayout },
   },
   {
-    path: '/test',
-    component: test,
-    //meta: { layout: MainLayout },
-  },
-  {
-    path: '/log',
-    component: Log,
+    path: '/agent',
+    component: Agent,
     meta: { layout: DefaultLayout },
     children: [
       {
-        path: 'phone',
-        component: LogPhone,
+        path: 'client', // 화주
+        component: AgentClient,
       },
       {
-        //
-        path: 'email',
-        component: LogEmail,
+        path: 'carrier', //운송사
+        component: AgentCarrier,
+      },
+      {
+        path: 'forwarders', //포워더
+        component: AgentForwarder,
       },
     ],
   },
   {
-    path: '/log',
-    component: Log,
+    path: '/user',
+    component: User,
     meta: { layout: DefaultLayout },
     children: [
       {
-        path: 'phone',
-        component: LogPhone,
+        path: 'client', // 화주
+        component: UserClient,
       },
       {
-        //
-        path: 'email',
-        component: LogEmail,
+        path: 'carrier', //운송사
+        component: UserCarrier,
+      },
+      {
+        path: 'forwarders', //포워더
+        component: UserForwarders,
+      },
+      {
+        path: 'driver', //포워더
+        component: UserDriver,
       },
     ],
   },

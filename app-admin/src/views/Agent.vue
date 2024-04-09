@@ -3,10 +3,10 @@
 
 </script>
 
-<!-- Log.vue -->
+<!-- Agent.vue -->
 <template>
   <div>
-    <h2>Log {{ $route.params.sub }}</h2>
+    <h2>{{ $route.fullPath }}</h2>
     <router-view />
   </div>
 </template>

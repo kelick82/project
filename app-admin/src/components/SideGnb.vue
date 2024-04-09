@@ -25,9 +25,10 @@
 </template>
 
 <script setup>
-import PanelMenu from "primevue/panelmenu";
-import {onMounted, ref} from "vue";
-import {GNBService} from "../service/GNBService";
+import PanelMenu from 'primevue/panelmenu';
+import { onMounted, ref } from 'vue';
+
+import { GNBService } from '../service/GNBService';
 const logoUrl = '/Icon_logi.svg';
 const wordmark = '/wordmark.svg';
 

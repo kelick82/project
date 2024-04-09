@@ -69,34 +69,33 @@ export const GNBService = {
     ];
   },
   getGNBServiceData() {
-
     return [
       {
         label: '대시보드',
         icon: 'pi pi-link',
-        route: '/theming'
+        route: '/',
       },
       {
         key: '1',
-        label: '업체관리',
+        label: '업체 관리',
         icon: 'pi pi-palette',
         items: [
           {
             label: '화주 관리',
             icon: 'pi pi-eraser',
-            route: '/client'
+            route: '/agent/client',
           },
           {
             label: '운송사 관리',
             icon: 'pi pi-heart',
-            route: '/carrier'
+            route: '/agent/carrier',
           },
           {
             label: '포워더 관리',
             icon: 'pi pi-heart',
-            route: '/carrier'
-          }
-        ]
+            route: '/agent/carrier',
+          },
+        ],
       },
       {
         key: '2',
@@ -106,31 +105,31 @@ export const GNBService = {
           {
             label: '화주 이용자 관리',
             icon: 'pi pi-star',
-            route: '/'
+            route: '/user/client',
           },
           {
             label: '운송사 이용자 관리',
             icon: 'pi pi-bookmark',
-            url: '/'
+            route: '/user/carrier',
           },
           {
             label: '포워더 이용자 관리',
             icon: 'pi pi-bookmark',
-            url: '/'
+            route: '/user/forwarders',
           },
           {
             label: '드라이버 이용자 관리',
             icon: 'pi pi-bookmark',
-            url: '/'
-          }
-        ]
-      }
-    ]
+            route: '/user/driver',
+          },
+        ],
+      },
+    ];
   },
   getTreeNodes() {
     return Promise.resolve(this.getTreeNodesData());
   },
   getGNBServiceNodes() {
     return Promise.resolve(this.getGNBServiceData());
-  }
+  },
 };
