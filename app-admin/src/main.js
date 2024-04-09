@@ -1,26 +1,14 @@
 import { createPinia } from 'pinia';
+import PrimeVue from 'primevue/config';
 import { createApp } from 'vue';
-import { createRouter, createWebHistory } from 'vue-router';
+
+import Wind from './presets/wind';
 
 import './style.css';
 import App from './App.vue';
-import AuthLayout from './layouts/AuthLayout.vue';
-import MainLayout from './layouts/MainLayout.vue';
-import HomePage from './views/MainPage.vue';
-import SamplePage from './views/SamplePage.vue';
-import SamplePage2 from './views/SamplePage2.vue';
+import router from './router';
 
-const routes = [
-  { path: '/', component: HomePage, meta: { layout: MainLayout } },
-  { path: '/page1', component: SamplePage, meta: { layout: AuthLayout } },
-  { path: '/page2', component: SamplePage2, meta: { layout: AuthLayout } },
-];
-
-// router
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-});
+import Ripple from 'primevue/ripple';
 
 // store 설정
 const pinia = createPinia();
@@ -29,5 +17,14 @@ const pinia = createPinia();
 const app = createApp(App);
 app.use(router);
 app.use(pinia);
+
+
+app.use(PrimeVue, {
+  unstyled: true,
+  ripple: true,
+  pt: Wind,
+});
+
+app.directive('ripple', Ripple);
 
 app.mount('#app');

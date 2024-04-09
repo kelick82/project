@@ -1,7 +1,5 @@
 <script setup></script>
 
 <template>
-  <div>hi2</div>
+  <div>Log/phone</div>
 </template>
-
-<style scoped></style>

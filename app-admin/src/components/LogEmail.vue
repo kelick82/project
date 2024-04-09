@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div>hi</div>
+  <div>Log/email</div>
 </template>
 
 <style scoped></style>
